@@ -1,0 +1,149 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Dashboard - Smart Campus Security{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stat-card {
+        transition: transform 0.2s;
+    }
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h2>Security Dashboard</h2>
+    </div>
+</div>
+
+<!-- Statistics Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card bg-primary text-white stat-card">
+            <div class="card-body">
+                <h5 class="card-title">Active Cameras</h5>
+                <h2 class="card-text">{{ active_cameras_count }}</h2>
+                <p class="mb-0">Monitoring Active</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-warning text-dark stat-card">
+            <div class="card-body">
+                <h5 class="card-title">Open Incidents</h5>
+                <h2 class="card-text">{{ open_incidents_count }}</h2>
+                <p class="mb-0">Require Attention</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-success text-white stat-card">
+            <div class="card-body">
+                <h5 class="card-title">Security Zones</h5>
+                <h2 class="card-text">{{ zones_count }}</h2>
+                <p class="mb-0">Under Protection</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-info text-white stat-card">
+            <div class="card-body">
+                <h5 class="card-title">Active Officers</h5>
+                <h2 class="card-text">{{ active_officers_count }}</h2>
+                <p class="mb-0">On Duty</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Incidents -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Recent Incidents</h5>
+                {% if user.can_manage_incidents %}
+                <a href="{% url 'incident_list' %}" class="btn btn-sm btn-primary">View All</a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if recent_incidents %}
+                <div class="list-group">
+                    {% for incident in recent_incidents %}
+                    <a href="{% url 'incident_detail' incident.id %}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ incident.title }}</h6>
+                            <small>{{ incident.reported_at|timesince }} ago</small>
+                        </div>
+                        <p class="mb-1">{{ incident.description|truncatewords:20 }}</p>
+                        <small class="text-muted">Priority: {{ incident.get_priority_display }}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted mb-0">No recent incidents reported.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera Status -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Camera Status</h5>
+                {% if user.can_view_cameras %}
+                <a href="{% url 'camera_list' %}" class="btn btn-sm btn-primary">View All</a>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if cameras %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Camera</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for camera in cameras %}
+                            <tr>
+                                <td>{{ camera.name }}</td>
+                                <td>{{ camera.location }}</td>
+                                <td>
+                                    {% if camera.status == 'active' %}
+                                    <span class="badge bg-success">Active</span>
+                                    {% elif camera.status == 'inactive' %}
+                                    <span class="badge bg-danger">Inactive</span>
+                                    {% else %}
+                                    <span class="badge bg-warning text-dark">Maintenance</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <p class="text-muted mb-0">No cameras available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Refresh dashboard data every 30 seconds
+    setInterval(function() {
+        location.reload();
+    }, 30000);
+</script>
+{% endblock %}

@@ -1,0 +1,190 @@
+INFO 2024-12-07 20:56:02,173 autoreload 7208 9348 Watching for file changes with StatReloader
+INFO 2024-12-07 20:59:38,266 basehttp 7208 5720 "GET / HTTP/1.1" 200 5850
+INFO 2024-12-07 20:59:38,344 basehttp 7208 5720 "GET /static/js/websocket.js HTTP/1.1" 304 0
+WARNING 2024-12-07 20:59:38,565 log 7208 4100 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:38,566 basehttp 7208 4100 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 20:59:40,026 log 7208 12724 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:40,026 basehttp 7208 12724 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 20:59:40,026 basehttp 7208 12724 - Broken pipe from ('127.0.0.1', 62876)
+INFO 2024-12-07 20:59:40,869 basehttp 7208 5720 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 20:59:40,941 log 7208 11780 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:40,943 basehttp 7208 11780 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 20:59:40,945 basehttp 7208 11780 - Broken pipe from ('127.0.0.1', 62878)
+WARNING 2024-12-07 20:59:41,996 log 7208 6220 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:41,997 basehttp 7208 6220 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 20:59:44,024 log 7208 10548 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:44,026 basehttp 7208 10548 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 20:59:48,070 log 7208 8068 Not Found: /ws/security/
+WARNING 2024-12-07 20:59:48,072 basehttp 7208 8068 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 20:59:48,516 log 7208 5720 Not Found: /mm
+WARNING 2024-12-07 20:59:48,516 basehttp 7208 5720 "GET /mm HTTP/1.1" 404 3172
+INFO 2024-12-07 21:00:02,891 basehttp 7208 5720 "GET /incidents/ HTTP/1.1" 200 3517
+WARNING 2024-12-07 21:00:03,039 log 7208 6576 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:03,041 basehttp 7208 6576 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:04,223 log 7208 9400 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:04,237 basehttp 7208 9400 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:06,284 log 7208 7164 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:06,285 basehttp 7208 7164 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:00:06,778 basehttp 7208 5720 "GET /admin/ HTTP/1.1" 200 5151
+INFO 2024-12-07 21:00:06,844 basehttp 7208 11520 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,845 basehttp 7208 5720 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,864 basehttp 7208 12460 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,866 basehttp 7208 11416 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,867 basehttp 7208 5720 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,867 basehttp 7208 11520 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,873 basehttp 7208 13116 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,938 basehttp 7208 13116 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:06,944 basehttp 7208 11520 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,022 basehttp 7208 11520 "GET /admin/auth/group/add/ HTTP/1.1" 200 12350
+INFO 2024-12-07 21:00:09,114 basehttp 7208 11416 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,115 basehttp 7208 5720 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,115 basehttp 7208 11520 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,117 basehttp 7208 12460 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,120 basehttp 7208 9580 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,156 basehttp 7208 5720 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,157 basehttp 7208 11416 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,161 basehttp 7208 9580 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,170 basehttp 7208 12460 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,174 basehttp 7208 11520 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,205 basehttp 7208 5720 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,219 basehttp 7208 13116 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2024-12-07 21:00:09,221 basehttp 7208 9580 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,226 basehttp 7208 11416 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,279 basehttp 7208 11416 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,625 basehttp 7208 11416 "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,631 basehttp 7208 9580 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,662 basehttp 7208 11416 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:09,744 basehttp 7208 9580 "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:11,252 basehttp 7208 9580 "GET /admin/ HTTP/1.1" 200 5151
+INFO 2024-12-07 21:00:17,016 basehttp 7208 9580 "GET /cameras HTTP/1.1" 301 0
+INFO 2024-12-07 21:00:17,045 basehttp 7208 11416 "GET /cameras/ HTTP/1.1" 302 0
+INFO 2024-12-07 21:00:17,072 basehttp 7208 11416 "GET / HTTP/1.1" 200 6142
+WARNING 2024-12-07 21:00:17,187 log 7208 12664 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:17,189 basehttp 7208 12664 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:18,433 log 7208 1036 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:18,433 basehttp 7208 1036 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:20,610 log 7208 3260 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:20,615 basehttp 7208 3260 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:24,872 log 7208 7008 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:24,882 basehttp 7208 7008 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:33,598 log 7208 6512 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:33,599 basehttp 7208 6512 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:00:35,673 basehttp 7208 11416 "GET /admin/ HTTP/1.1" 200 5151
+INFO 2024-12-07 21:00:35,739 basehttp 7208 11416 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,745 basehttp 7208 12460 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,747 basehttp 7208 11520 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,748 basehttp 7208 13116 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,749 basehttp 7208 5720 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,751 basehttp 7208 9200 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,766 basehttp 7208 11520 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,807 basehttp 7208 11520 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:35,815 basehttp 7208 9200 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2024-12-07 21:00:48,072 basehttp 7208 9200 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:00:48,481 log 7208 7580 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:48,483 basehttp 7208 7580 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:00:48,483 basehttp 7208 7580 - Broken pipe from ('127.0.0.1', 62969)
+WARNING 2024-12-07 21:00:52,242 log 7208 4452 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:52,242 basehttp 7208 4452 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:00:57,046 log 7208 10920 Not Found: /ws/security/
+WARNING 2024-12-07 21:00:57,046 basehttp 7208 10920 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:05,112 log 7208 1596 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:05,113 basehttp 7208 1596 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:17,767 log 7208 12572 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:17,769 basehttp 7208 12572 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:01:19,073 basehttp 7208 9200 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:01:20,684 log 7208 7988 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:20,688 basehttp 7208 7988 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:23,456 log 7208 7708 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:23,458 basehttp 7208 7708 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:30,855 log 7208 11868 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:30,856 basehttp 7208 11868 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:39,985 log 7208 12276 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:39,987 basehttp 7208 12276 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:01:45,063 autoreload 7208 9348 C:\Users\Admin\CascadeProjects\opencv\smart_campus\smart_campus\settings.py changed, reloading.
+INFO 2024-12-07 21:01:47,476 autoreload 6532 7700 Watching for file changes with StatReloader
+INFO 2024-12-07 21:01:50,164 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:01:52,463 log 6532 11972 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:52,465 basehttp 6532 11972 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:01:58,846 log 6532 8276 Not Found: /ws/security/
+WARNING 2024-12-07 21:01:58,849 basehttp 6532 8276 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:02:02,330 log 6532 9212 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:02,332 basehttp 6532 9212 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:02:09,713 log 6532 12668 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:09,714 basehttp 6532 12668 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:02:21,078 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:02:24,597 log 6532 7356 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:24,599 basehttp 6532 7356 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:02:28,100 log 6532 4940 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:28,115 basehttp 6532 4940 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:02:34,961 log 6532 9844 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:34,962 basehttp 6532 9844 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:02:42,353 log 6532 2056 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:42,354 basehttp 6532 2056 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:02:52,077 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+INFO 2024-12-07 21:02:52,123 basehttp 6532 8964 "GET /static/js/websocket.js HTTP/1.1" 304 0
+WARNING 2024-12-07 21:02:56,145 log 6532 10376 Not Found: /ws/security/
+WARNING 2024-12-07 21:02:56,146 basehttp 6532 10376 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:03,021 log 6532 4180 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:03,022 basehttp 6532 4180 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:07,317 log 6532 10648 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:07,324 basehttp 6532 10648 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:15,460 log 6532 12984 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:15,462 basehttp 6532 12984 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:03:23,081 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:03:26,363 log 6532 12684 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:26,364 basehttp 6532 12684 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:32,068 log 6532 12896 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:32,068 basehttp 6532 12896 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:39,971 log 6532 12360 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:39,973 basehttp 6532 12360 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:03:47,800 log 6532 10536 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:47,800 basehttp 6532 10536 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:03:54,076 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:03:58,308 log 6532 12932 Not Found: /ws/security/
+WARNING 2024-12-07 21:03:58,310 basehttp 6532 12932 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:04:00,980 autoreload 13004 620 Watching for file changes with StatReloader
+WARNING 2024-12-07 21:04:04,272 log 6532 5248 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:04,274 basehttp 6532 5248 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:04:10,564 log 6532 4376 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:10,565 basehttp 6532 4376 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:04:17,172 log 6532 12892 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:17,223 basehttp 6532 12892 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:04:24,425 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:04:26,058 log 6532 12572 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:26,067 basehttp 6532 12572 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:04:28,482 log 6532 12860 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:28,484 basehttp 6532 12860 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:04:34,501 log 6532 3684 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:34,539 basehttp 6532 3684 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:04:41,038 log 6532 7144 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:41,040 basehttp 6532 7144 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:04:45,249 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+INFO 2024-12-07 21:04:48,436 basehttp 6532 8964 "GET /admin/ HTTP/1.1" 200 5151
+WARNING 2024-12-07 21:04:48,813 log 6532 11520 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:48,813 basehttp 6532 11520 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:04:50,613 basehttp 6532 8964 "GET /admin/auth/group/add/ HTTP/1.1" 200 12350
+INFO 2024-12-07 21:04:50,725 basehttp 6532 8964 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2024-12-07 21:04:53,079 log 6532 10524 Not Found: /ws/security/
+WARNING 2024-12-07 21:04:53,079 basehttp 6532 10524 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:05:00,713 log 6532 12884 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:00,714 basehttp 6532 12884 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:05:06,097 log 6532 13304 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:06,097 basehttp 6532 13304 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:05:16,083 basehttp 6532 8964 "GET / HTTP/1.1" 200 5850
+WARNING 2024-12-07 21:05:18,387 log 6532 5240 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:18,387 basehttp 6532 5240 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:05:21,419 basehttp 6532 8964 "POST /admin/auth/group/add/ HTTP/1.1" 302 0
+INFO 2024-12-07 21:05:21,626 basehttp 6532 8964 "GET /admin/auth/group/ HTTP/1.1" 200 8303
+INFO 2024-12-07 21:05:21,701 basehttp 6532 1932 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2024-12-07 21:05:21,853 basehttp 6532 8964 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6566
+INFO 2024-12-07 21:05:21,856 basehttp 6532 1932 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-12-07 21:05:21,921 basehttp 6532 8964 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-12-07 21:05:21,921 basehttp 6532 1932 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+WARNING 2024-12-07 21:05:23,735 log 6532 4868 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:23,736 basehttp 6532 4868 "GET /ws/security/ HTTP/1.1" 404 3202
+WARNING 2024-12-07 21:05:28,978 log 6532 8872 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:28,980 basehttp 6532 8872 "GET /ws/security/ HTTP/1.1" 404 3202
+INFO 2024-12-07 21:05:33,600 basehttp 6532 1932 "GET /cameras/ HTTP/1.1" 302 0
+INFO 2024-12-07 21:05:33,624 basehttp 6532 1932 "GET / HTTP/1.1" 200 6142
+WARNING 2024-12-07 21:05:37,481 log 6532 2204 Not Found: /ws/security/
+WARNING 2024-12-07 21:05:37,483 basehttp 6532 2204 "GET /ws/security/ HTTP/1.1" 404 3202

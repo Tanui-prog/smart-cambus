@@ -1,0 +1,236 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Incident #{{ incident.id }} - Smart Campus Security{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'incident_list' %}">Incidents</a></li>
+                <li class="breadcrumb-item active">Incident #{{ incident.id }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2>{{ incident.title }}</h2>
+        <p class="text-muted">
+            Reported {{ incident.reported_at|timesince }} ago by {{ incident.reported_by.get_full_name }}
+        </p>
+    </div>
+    <div class="col-md-4 text-end">
+        {% if user.can_manage_incidents %}
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
+            <i class="fas fa-plus"></i> Add Update
+        </button>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <!-- Incident Details -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Incident Details</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <strong>Status:</strong>
+                    </div>
+                    <div class="col-md-9">
+                        {% if incident.status == 'open' %}
+                        <span class="badge bg-danger">Open</span>
+                        {% elif incident.status == 'investigating' %}
+                        <span class="badge bg-warning text-dark">Investigating</span>
+                        {% elif incident.status == 'resolved' %}
+                        <span class="badge bg-success">Resolved</span>
+                        {% else %}
+                        <span class="badge bg-secondary">Closed</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <strong>Priority:</strong>
+                    </div>
+                    <div class="col-md-9">
+                        {% if incident.priority == 'high' %}
+                        <span class="badge bg-danger">High</span>
+                        {% elif incident.priority == 'medium' %}
+                        <span class="badge bg-warning text-dark">Medium</span>
+                        {% else %}
+                        <span class="badge bg-info">Low</span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <strong>Location:</strong>
+                    </div>
+                    <div class="col-md-9">
+                        {{ incident.location }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <strong>Description:</strong>
+                        <p class="mt-2">{{ incident.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Incident Updates -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Updates</h5>
+            </div>
+            <div class="card-body">
+                {% if updates %}
+                <div class="timeline">
+                    {% for update in updates %}
+                    <div class="timeline-item mb-4">
+                        <div class="d-flex">
+                            <div class="timeline-marker bg-primary"></div>
+                            <div class="timeline-content">
+                                <p class="mb-1">{{ update.content }}</p>
+                                <small class="text-muted">
+                                    Updated by {{ update.updated_by.get_full_name }} - {{ update.timestamp|timesince }} ago
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted mb-0">No updates yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <!-- Evidence -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Evidence</h5>
+            </div>
+            <div class="card-body">
+                {% if incident.evidence_set.exists %}
+                <div class="list-group">
+                    {% for evidence in incident.evidence_set.all %}
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ evidence.title }}</h6>
+                            <small>{{ evidence.timestamp|date }}</small>
+                        </div>
+                        <p class="mb-1">{{ evidence.description }}</p>
+                        {% if evidence.file %}
+                        <small>
+                            <a href="{{ evidence.file.url }}" target="_blank">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </small>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted mb-0">No evidence attached.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Related Cameras -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Related Cameras</h5>
+            </div>
+            <div class="card-body">
+                {% if incident.cameras.exists %}
+                <div class="list-group">
+                    {% for camera in incident.cameras.all %}
+                    <a href="{% url 'camera_detail' camera.id %}" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ camera.name }}</h6>
+                            <small class="text-{{ camera.status }}">{{ camera.get_status_display }}</small>
+                        </div>
+                        <small>{{ camera.location }}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p class="text-muted mb-0">No cameras associated with this incident.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Update Modal -->
+{% if user.can_manage_incidents %}
+<div class="modal fade" id="updateModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Update</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form method="post" action="{% url 'incident_update' incident.id %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="content" class="form-label">Update Content</label>
+                        <textarea class="form-control" id="content" name="content" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Update Status</label>
+                        <select class="form-select" id="status" name="status">
+                            <option value="open" {% if incident.status == 'open' %}selected{% endif %}>Open</option>
+                            <option value="investigating" {% if incident.status == 'investigating' %}selected{% endif %}>Investigating</option>
+                            <option value="resolved" {% if incident.status == 'resolved' %}selected{% endif %}>Resolved</option>
+                            <option value="closed" {% if incident.status == 'closed' %}selected{% endif %}>Closed</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+.timeline-item {
+    position: relative;
+}
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.timeline-content {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+}
+</style>
+{% endblock %}

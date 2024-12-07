@@ -1,0 +1,100 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Report Incident - Smart Campus Security{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'incident_list' %}">Incidents</a></li>
+                <li class="breadcrumb-item active">Report Incident</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Report New Incident</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" required>
+                        <div class="form-text">Brief description of the incident</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                        <div class="form-text">Detailed description of what happened</div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="priority" class="form-label">Priority</label>
+                                <select class="form-select" id="priority" name="priority" required>
+                                    <option value="">Select priority</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="location" class="form-label">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-end">
+                        <a href="{% url 'incident_list' %}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Report Incident</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Reporting Guidelines</h5>
+            </div>
+            <div class="card-body">
+                <h6>Priority Levels</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <span class="badge bg-danger">High</span>
+                        <small class="ms-2">Immediate threat to safety or property</small>
+                    </li>
+                    <li class="mb-2">
+                        <span class="badge bg-warning text-dark">Medium</span>
+                        <small class="ms-2">Potential threat or ongoing issue</small>
+                    </li>
+                    <li class="mb-2">
+                        <span class="badge bg-info">Low</span>
+                        <small class="ms-2">Minor issue or maintenance required</small>
+                    </li>
+                </ul>
+                
+                <h6 class="mt-4">Tips for Reporting</h6>
+                <ul class="small">
+                    <li>Be specific about the location</li>
+                    <li>Include time and date of occurrence</li>
+                    <li>Describe any witnesses present</li>
+                    <li>Note any immediate actions taken</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
